@@ -1,0 +1,146 @@
+/* Configurações gerais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #f5e6d3, #ffe8cc);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+/* Container principal */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Área das questões */
+.Questoes {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Título principal */
+.Questoes h1 {
+    text-align: center;
+    color: #8b4513;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* Títulos das questões */
+.Questoes h2 {
+    text-align: center;
+    color: #5c3317;
+    font-size: 22px;
+    margin: 25px 0 20px;
+}
+
+/* Textos */
+.Questoes h3 {
+    margin: 12px 0 8px;
+    color: #444;
+    font-size: 16px;
+}
+
+/* Campos de entrada */
+input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+
+input:focus {
+    border-color: #d2691e;
+    box-shadow: 0 0 5px rgba(210, 105, 30, 0.3);
+}
+
+/* Botões */
+button {
+    display: block;
+    margin: 15px auto 20px;
+    padding: 12px 30px;
+    background-color: #d2691e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #a94f0f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Resultados */
+#result1,
+#result2,
+#result3,
+#result4 {
+    color: #2e7d32;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0 25px;
+}
+
+/* Linha divisória */
+hr {
+    border: none;
+    border-top: 2px solid #eee;
+    margin: 35px 0;
+}
+
+/* Responsividade para celular */
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+    .Questoes {
+        padding: 25px 20px;
+    }
+
+    .Questoes h1 {
+        font-size: 26px;
+    }
+
+    .Questoes h2 {
+        font-size: 19px;
+    }
+
+    .Questoes h3 {
+        font-size: 15px;
+    }
+
+    input {
+        max-width: 100%;
+    }
+
+    button {
+        width: 100%;
+        max-width: 250px;
+    }
+}

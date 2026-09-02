@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Segunda lista - Estruturas de repetição</title>
+    <link rel='stylesheet' href='Lista02.css'>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="Questoes">
+            <h1>Lista de Exercícios 02 - Estruturas de repetições</h1>
+            <br>
+            <br>
+            <br>
+            <hr>
+
+
+            <h2>Questão 05: Verificador de Número Ímpar ou Par</h2>
+            <br>
+
+            <h3>Digite um número:</h3>
+
+            <input type="number" id="num">
+
+            <button onclick="verificarNum()">Verificar</button>
+
+            <p id="result5"></p>
+
+
+
+            <hr>
+            <br>
+
+            <h2>Questão 06: Validar login</h2>
+            <br>
+
+            <h3>Digite seu usuário:</h3>
+            <input type="text" id="login">
+
+            <h3>Digite sua senha:</h3>
+            <input type="password" id="senha">
+
+            <button onclick="autenticarUsuario()">Logar</button>
+
+            <p id="result6"></p>
+
+            <hr>
+            <br>
+
+            <h2>Questão 07: Calcular Média</h2>
+            <br>
+
+            <h3>Digite a primeira nota:</h3>
+            <input type="number" id="nota01" min="0" max="100" oninput="if (this.value > 100) this.value = 100;">
+
+            <h3>Digite a segunda nota:</h3>
+            <input type="number" id="nota02" min="0" max="100" oninput="if (this.value > 100) this.value = 100;">
+
+            <h3>Digite a terceira nota:</h3>
+            <input type="number" id="nota03" min="0" max="100" oninput="if (this.value > 100) this.value = 100;">
+
+            <button onclick="calcularMedia()">Calcular</button>
+
+            <p id="result7"></p>
+
+            <hr>
+            <br>
+
+            <h2>Questão 08: Calcular Média</h2>
+            <br>
+
+            <h3>Digite a quantidade de votos do candidato A:</h3>
+            <input type="number" id="candidatoA">
+
+            <h3>Digite a quantidade de votos do candidato B:</h3>
+            <input type="number" id="candidatoB">
+
+            <h3>Digite votos brancos:</h3>
+            <input type="number" id="brancos">
+
+            <h3>Digite votos nulos:</h3>
+            <input type="number" id="nulos">
+
+            <button onclick="calcularPorcentagem()">Calcular</button>
+
+
+            <p id="result8"></p>
+            <hr>
+            <br>
+
+            <h2>Questão 09: Reajuste salarial</h2>
+            <br>
+
+            <h3>Digite seu salário atual:</h3>
+            <input type="number" id="salario">
+
+            <h3>Digite a quanto tempo trabalha(em anos):</h3>
+            <input type="number" id="tempoServico">
+
+            <button onclick="reajusteSalarial()">Calcular reajuste</button>
+            <p id="result9"></p>
+
+
+            <hr>
+            <br>
+
+            <h2>Questão 10: Reajuste salarial</h2>
+            <br>
+
+            <h3>Digite o nome do produto:</h3>
+            <input type="text" id="nome">
+
+            <h3>Digite o preço do produto:</h3>
+            <input type="number" id="preco">
+
+            <h3>Digite a quantidade que vai querer do produto:</h3>
+            <input type="number" id="quantidade">
+
+            <button onclick="calcularDesconto()">Calcular desconto</button>
+            <p id="result10"></p>
+
+        </div>
+    </div>
+
+
+
+
+    <script src="Lista02.js"></script>
+</body>
+
+</html>
