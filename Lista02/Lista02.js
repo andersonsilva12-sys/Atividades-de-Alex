@@ -62,8 +62,8 @@ function verificarNum() {
 
 function autenticarUsuario() {
 
-    let LoginCorreto = "admin";
-    let SenhaCorreta = "1234";
+    const LoginCorreto = "admin";
+    const SenhaCorreta = "1234";
 
     let Login = document.getElementById("login").value;
     let Senha = document.getElementById("senha").value;
