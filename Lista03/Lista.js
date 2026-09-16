@@ -99,3 +99,189 @@ function classificadorIdade(){
    }
     document.getElementById("result3").innerHTML = resultado;
 }
+
+//  Questão 04: Aprovação com frequência
+/* Escreva uma função para verificar a situação final de um aluno.
+
+Receba três notas e o percentual de frequência. Calcule a média aritimética.
+
+Se alguma nota estiver fora do intervalo de 0 a 100, mostre "Nota inválida". Se a
+frequência estiver fora de 0 a 100, mostre "Frequência inválida.
+
+Se a média for maior ou igual a 70 e a frequência maior ou igual a 75%, mostre "Aprovado".
+
+Se a média for maior ou igual a 70, mas a frequência menor que 75%, mostre "Reprovado por falta".
+
+Se a média estiver entre 40 e 69,99 e a frequência for suficiente, mostre "Exame final". Se a média for menor
+que 40, mostre "Reprovado por média".
+*/
+
+function aprovadorSala() {
+    let Nota1 = Number(document.getElementById("nota1").value)
+    let Nota2 = Number(document.getElementById("nota2").value)
+    let Nota3 = Number(document.getElementById("nota3").value)
+    let Frequencia = Number(document.getElementById("frequencia").value)
+
+    Media = (Nota1 + Nota2 + Nota3) / 3
+
+    if (Nota1 < 0 || Nota1 > 100) {
+        resultado = ("Nota inválida. As notas devem estar entre 0 e 100!");
+    } else if (Nota2 < 0 || Nota2 > 100) {
+        resultado = ("Nota inválida. As notas devem estar entre 0 e 100!");
+    } else if (Nota3 < 0 || Nota3 > 100) {
+        resultado = ("Nota inválida. As notas devem estar entre 0 e 100!");
+    } else if (Frequencia < 0 || Frequencia > 100) {
+        resultado = ("Frequência inválida. A frequência deve estar entre 0 e 100!");
+    }
+
+    if (Media >= 70 && Frequencia >= 75) {
+        resultado = (`Sua média foi: ${Media}. Aluno aprovado!`);
+    } else if (Media >= 70 && Frequencia < 75) {
+        resultado = (`Sua média foi: ${Media}, mas sua frequência foi: ${Frequencia}. Aluno reprovado por falta!`);
+    } else if (Media >= 40 && Media >= 69.99 && Frequencia >= 75) {
+        resultado = (`Sua média foi: ${Media}. Aluno no exame final`);
+    } else if (Media < 40) {
+        resultado = (`Sua média foi: ${Media}. Aluno reprovado por média!`)
+    }
+
+
+    document.getElementById("result4").innerHTML = resultado;
+}
+
+
+//Questão 05: Tarifa de energia elétrica
+/* Escreva uma função para calcular o valor de uma conta de energia elétrica a partir do
+consumo mensal em kWh.
+
+Até 100 kWh: R$ 0.50 por kWh; de 101 a 200 kWh: R$ 0.75 por kWh; de 201 a 300 kWh: R$ 1.00 por kWh;
+acima de 300 kWh: R$ 1.25 por kWh.
+
+Considere uma taxa fixa de iluminação pública de R$ 15.00.
+
+Consumo menor que zero deve ser considerado inválido
+Mostre o consumo, o valor do consumo, a taxa adcional e o valor total. */
+
+function tarifaEnergia() {
+    let Consumo = Number(document.getElementById("consumo").value)
+    const taxaFixa = 15.00
+
+    if (Consumo < 0) {
+        resultado = (`Consumo inválido!`)
+    }   else if (Consumo <= 100) {
+        taxa = Consumo * 0.50
+        valorTotal = taxa + taxaFixa
+        resultado = `Seu consumo foi de: ${Consumo} kWh.
+                    O valor de consumo é R$ 0.50 por kWh. Você deve pagar um taxa fixa de R$ 15.00. 
+                    Valor total a pagar = R$ ${valorTotal}`;
+    }   else if (Consumo <= 200) {
+        taxa = Consumo * 0.75
+        valorTotal = taxa + taxaFixa
+        resultado = `Seu consumo foi de: ${Consumo} kWh.
+                    O valor de consumo é R$ 0.75 por kWh. Você deve pagar um taxa fixa de R$ 15.00. 
+                    Valor total a pagar = R$ ${valorTotal}`;
+    }   else if (Consumo <= 300) {
+        taxa = Consumo * 1.00
+        valorTotal = taxa + taxaFixa
+        resultado = `Seu consumo foi de: ${Consumo} kWh.
+                    O valor de consumo é R$ 1.00 por kWh. Você deve pagar um taxa fixa de R$ 15.00. 
+                    Valor total a pagar = R$ ${valorTotal}`;
+    }   else if (Consumo > 300) {
+        taxa = Consumo * 1.25
+        valorTotal = taxa + taxaFixa
+        resultado = `Seu consumo foi de: ${Consumo} kWh.
+                    O valor de consumo é R$ 1.25 por kWh. Você deve pagar um taxa fixa de R$ 15.00. 
+                    Valor total a pagar = R$ ${valorTotal}`;
+    }
+    
+    document.getElementById("result5").textContent = resultado
+
+}
+
+//Questão 06: Descontos em uma loja
+/* • Escreva uma função para calcular o valor final de uma compra.
+• Receba o valor total da compra e a forma de pagamento: dinheiro, pix ou cartao.
+
+• Para dinheiro ou pix: acima de R$ 1.000,00, desconto de 15%; de R$ 500,00 a R$ 1.000,00,
+desconto de 10%; abaixo de R$ 500,00, desconto de 5%.
+
+• Para cartão: acima de R$ 1.000,00, desconto de 5%; de R$ 500,00 a R$ 1.000,00, desconto
+de 3%;
+abaixo de R$ 500,00, sem desconto.
+• Valor menor ou igual a zero e forma de pagamento inválida devem gerar mensagens de erro.
+• Mostre valor original, desconto e valor final. */
+
+function calcularDesconto() {
+    let valorFinal = parseFloat(document.getElementById("valorFinal").value);
+    let Pagamento = document.getElementById("pagamento").value;
+    let total;
+
+    if (valorFinal <= 0) {
+        document.getElementById("result6").innerHTML = "Valor final inválido!";
+        return;
+    }
+
+    if (Pagamento == "dinheiro" || Pagamento == "pix") {
+        if (valorFinal <= 500) {
+            total = valorFinal * 0.95;
+            resultado = (`Desconto de 5%. Valor total a ser pago: R$ ${total}`)
+        }
+        else if (valorFinal <= 1000) {
+            total = valorFinal * 0.9;
+            resultado = (`Desconto de 10%. Valor total a ser pago: R$ ${total}`)
+        }
+        else {
+            total = valorFinal * 0.85;
+            resultado = (`Desconto de 15%. Valor total a ser pago: R$ ${total}`)
+        }
+    } 
+
+    if (Pagamento == "cartao") {
+          if (valorFinal <= 500) {
+            total = valorFinal;
+            resultado = (`Sem desconto. Valor total a ser pago: R$ ${total}`)
+        }
+        else if (valorFinal <= 1000) {
+            total = valorFinal * 0.97;
+            resultado = (`Desconto de 3%. Valor total a ser pago: R$ ${total}`)
+
+        }
+        else {
+            total = valorFinal * 0.95;
+            resultado = (`Desconto de 5%. Valor total a ser pago: R$ ${total}`)
+        }
+    }
+
+    document.getElementById("result6").innerHTML = resultado
+}
+
+//Questão 07: Classificação de triângulos
+/* • Escreva uma função para classificar um triângulo a partir de seus três lados.
+• Primeiro verifique se os lados podem formar um triângulo. A soma de dois lados deve ser
+sempre maior que o terceiro.
+
+• Se não puder formar um triângulo, mostre “Não forma um triângulo”.
+• Se for válido: três lados iguais significam “Equilátero”; dois lados iguais significam
+“Isósceles”; três lados diferentes significam “Escaleno”. */
+
+
+function classificarTriangulos() {
+    let ladoA = parseFloat(document.getElementById("ladoA").value);
+    let ladoB = parseFloat(document.getElementById("ladoB").value);
+    let ladoC = parseFloat(document.getElementById("ladoC").value);
+    let somAB = ladoA + ladoB;
+    let somAC = ladoA + ladoC;
+    let somBC = ladoB + ladoC;
+
+    if (somAB > ladoC && somAC > ladoB && somBC > ladoA){
+            if (ladoA == ladoB && ladoA == ladoC) {
+                document.getElementById("result7").innerHTML = "Esse é um triângulo equilátero!"        
+            } else if (ladoA != ladoB && ladoA !=ladoC) {
+                document.getElementById("result7").innerHTML = "Esse é um triângulo escaleno!"        
+            } else {
+                document.getElementById("result7").innerHTML = "Esse é um triângulo isóceles!"        
+            }
+    } else {
+        document.getElementById("result7").innerHTML = "Essas medidas não são de um triângulo!"
+    }
+    document.getElementById("result6").innerHTML = resultado
+}   
