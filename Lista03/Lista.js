@@ -285,3 +285,77 @@ function classificarTriangulos() {
     }
     document.getElementById("result6").innerHTML = resultado
 }   
+t
+//Questão 08: Validação de saque.
+/* Escreva uma função para simular a validação de um saque em um caixa eletrônico.
+• Receba o saldo disponível e o valor desejado para saque.
+
+• Saldo menor que zero: “Saldo inválido”. Valor de saque menor ou igual a zero: “Valor
+de saque inválido”. Saque maior que o saldo: “Saldo insuficiente”.
+• O saque deve ser múltiplo de 10. Caso contrário, mostre “Valor deve ser múltiplo de 10”.
+• Se todas as condições forem satisfeitas, mostre “Saque autorizado” e o saldo restante.
+• Não é necessário calcular a quantidade de cédulas. */
+
+function validarSaque() {
+    let saldo = parseFloat(document.getElementById("saldo").value);
+    let saque = parseFloat(document.getElementById("saque").value);
+    let resto;
+
+        if (saldo < 0) {
+            document.getElementById("result8").innerHTML = (`Saldo inválido!`);
+            return;
+        }   
+
+        if (saque <= 0) {
+            document.getElementById("result8").innerHTML = ("Valor do saque inválido!");
+            return;
+        } else if (saque > saldo) {
+            document.getElementById("result8").innerHTML = ("Saldo insuficiente!");
+            return;
+        } else if (saque % 10 == 0) {
+            resto = saldo - saque
+            document.getElementById("result8").innerHTML = (`Saque efetuado. Seu saldo restante é: R$ ${resto}!`);
+            return;
+        } else {
+            document.getElementById("result8").innerHTML = (`O valor do saque deve ser multiplo de 10!`);
+            return;
+        }
+}
+
+
+//Questão 9 — Imposto de renda simplificado
+/* • Escreva uma função para calcular um imposto simplificado com base no salário bruto.
+• Até R$ 2.000,00: isento; acima de R$ 2.000,00 até R$ 3.500,00: 7,5%; acima de R$ 3.500,00
+até R$
+5.000,00: 15%; acima de R$ 5.000,00: 22,5%.
+• Salário menor ou igual a zero deve ser considerado inválido.
+• Calcule o imposto sobre o salário bruto inteiro.
+• Mostre salário bruto, alíquota aplicada, valor do imposto e salário após o imposto. */
+
+
+function calcularImposto() {
+    let salarioBruto = parseFloat(document.getElementById("salarioBruto").value);
+    let imposto;
+    let salarioLiquido
+
+    if (salarioBruto <= 2000) {
+        salarioLiquido = salarioBruto 
+        document.getElementById("result9").innerHTML = (`Isento de imposto! Seu salário líquido é: R$ ${salarioLiquido}`);
+        return;
+    } else if (salarioBruto <= 3500) {
+        imposto = salarioBruto * 0.075
+        salarioLiquido = salarioBruto - imposto
+        document.getElementById("result9").innerHTML = (`Você terá um imposto de: R$ ${imposto}! Seu salário líquido é: R$ ${salarioLiquido}`);
+
+    } else if (salarioBruto <= 5000) {
+        imposto = salarioBruto * 0.15
+        salarioLiquido = salarioBruto - imposto
+        document.getElementById("result9").innerHTML = (`Você terá um imposto de: R$ ${imposto}! Seu salário líquido é: R$ ${salarioLiquido}`);
+
+    } else {
+        imposto = salarioBruto * 0.22
+        salarioLiquido = salarioBruto - imposto
+        document.getElementById("result9").innerHTML = (`Você terá um imposto de: R$ ${imposto}! Seu salário líquido é: R$ ${salarioLiquido}`);
+
+    }
+}
