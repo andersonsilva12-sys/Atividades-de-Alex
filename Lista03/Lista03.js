@@ -373,9 +373,3 @@ Além disso, o influenciador receberá um bônus de acordo com a quantidade de c
 • 5.000 curtidas ou mais: bônus de R$ 300,00.
 A função deve receber a quantidade de seguidores e de curtidas, calcular o valor da publicação,
 o bônus e o total recebido. */
-
-function analiseCredito() {
-    let seguidores = parseFloat(document.getElementById("seguidores").value);
-
-    
-}
